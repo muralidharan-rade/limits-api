@@ -1,11 +1,6 @@
 package com.cloudnative.controller;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
-@Component
-@ConfigurationProperties(prefix = "limits-api")
-public class LimitsConfiguration {
+public class LimitsConfigurationBean {
 
 	private int min;
 	private int max;
@@ -24,6 +19,16 @@ public class LimitsConfiguration {
 
 	public void setMax(int max) {
 		this.max = max;
+	}
+
+	public LimitsConfigurationBean(int min, int max) {
+		super();
+		this.min = min;
+		this.max = max;
+	}
+
+	public LimitsConfigurationBean() {
+		super();
 	}
 
 }
